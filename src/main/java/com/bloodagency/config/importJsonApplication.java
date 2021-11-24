@@ -1,13 +1,13 @@
 package com.bloodagency.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.bloodagency.service.PessoaService;
 
-@SpringBootApplication
+@Configuration
 public class ImportJsonApplication {
 
 	@Autowired
