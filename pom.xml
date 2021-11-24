@@ -82,35 +82,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.5.2.RELEASE</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<mainClass>${spring.boot.mainclass}</mainClass>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
-	<profiles>
-		<profile>
-			<id>profile1</id>
-			<properties>
-				<spring.boot.mainclass>com.bloodagency.BloodagencyApplication</spring.boot.mainclass>
-			</properties>
-		</profile>
-		<profile>
-			<id>profile2</id>
-			<properties>
-				<spring.boot.mainclass>com.bloodagency.config.ImportJsonApplication</spring.boot.mainclass>
-			</properties>
-		</profile>
-	</profiles>
 </project>
