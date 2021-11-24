@@ -16,6 +16,7 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
+import com.bloodagency.model.enums.EstadoBrasil;
 import com.bloodagency.model.enums.Genero;
 import com.bloodagency.model.enums.TipoSanguineo;
 
@@ -82,9 +83,9 @@ public class Pessoa {
 	@Column(nullable = false)
 	private String cidade;
 	
-	@NotBlank
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private String estado;
+	private EstadoBrasil estado;
 	
 	@NotBlank
 	@Column(name = "telefone_fixo", nullable = false)
