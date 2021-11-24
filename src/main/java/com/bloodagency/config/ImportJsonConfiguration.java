@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Configuration;
 import com.bloodagency.service.PessoaService;
 
 @Configuration
-public class ImportJsonApplication {
+public class ImportJsonConfiguration {
 
 	@Autowired
 	private PessoaService service;
 	
-	private String dir = "./data.json";
+	public String dir = "./data.json";
 
 	@Bean
 	public void loaderJson() {
