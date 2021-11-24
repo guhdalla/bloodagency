@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import com.bloodagency.service.PessoaService;
 
 @SpringBootApplication
-public class importJsonApplication {
+public class ImportJsonApplication {
 
 	@Autowired
 	private PessoaService service;
@@ -16,7 +16,7 @@ public class importJsonApplication {
 	private String dir = "./data.json";
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(importJsonApplication.class).run(args);
+		new SpringApplicationBuilder(ImportJsonApplication.class).run(args);
 	}
 
 	@Bean
