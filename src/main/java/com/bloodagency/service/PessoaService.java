@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bloodagency.model.Pessoa;
+import com.bloodagency.model.enums.EstadoBrasil;
 import com.bloodagency.repository.PessoaRepository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -40,6 +41,14 @@ public class PessoaService {
 	
 	public Pessoa create(Pessoa pessoa) {
 		return repository.save(pessoa);
+	}
+
+	public List<Pessoa> findByEstado(EstadoBrasil estado) {
+		return repository.findByEstado(estado);
+	}
+	
+	public List<Pessoa> findAll() {
+		return repository.findAll();
 	}
 
 }
