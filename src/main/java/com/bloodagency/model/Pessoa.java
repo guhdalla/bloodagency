@@ -1,5 +1,6 @@
 package com.bloodagency.model;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -99,17 +100,38 @@ public class Pessoa {
 	
 	@Min(0)
 	@Column(nullable = false)
-	private float altura;
+	private Double altura;
 	
 	@Min(0)
 	@Column(nullable = false)
-	private float peso;
+	private int peso;
 	
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private TipoSanguineo tipo_sanguineo;
 	
-	private String getTipo_sanguineo() {
-		return this.tipo_sanguineo.getValor();
+	public int getIdade() {
+		return calculaIdade(data_nasc);
+	}
+	
+	public int calculaIdade(Date dataNasc) {
+
+	    Calendar dataNascimento = Calendar.getInstance();  
+	    dataNascimento.setTime(dataNasc); 
+	    Calendar hoje = Calendar.getInstance();  
+
+	    int idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR); 
+
+	    if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
+	      idade--;  
+	    } 
+	    else 
+	    { 
+	        if (hoje.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && hoje.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) {
+	            idade--; 
+	        }
+	    }
+
+	    return idade;
 	}
 }
